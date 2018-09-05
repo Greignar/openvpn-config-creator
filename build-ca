@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd ./easy-rsa-master/easyrsa3
+
+./easyrsa build-ca
+./easyrsa gen-crl
+

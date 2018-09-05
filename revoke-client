@@ -1,0 +1,9 @@
+#!/bin/sh
+
+user=${1?"The user is required"}
+
+cd ./easy-rsa-master/easyrsa3
+
+./easyrsa revoke $user
+./easyrsa gen-crl
+

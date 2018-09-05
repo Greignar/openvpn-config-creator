@@ -1,0 +1,11 @@
+#!/bin/sh
+
+rm -r ./easy-rsa-master
+rm master.zip
+
+wget https://github.com/OpenVPN/easy-rsa/archive/master.zip
+unzip master.zip
+cd ./easy-rsa-master/easyrsa3
+
+./easyrsa init-pki
+

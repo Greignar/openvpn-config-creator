@@ -1,0 +1,13 @@
+#!/bin/sh
+
+user=${1?"The user is required"}
+
+cd ./easy-rsa-master/easyrsa3
+
+./easyrsa gen-req $user nopass
+./easyrsa sign-req server $user
+./easyrsa gen-dh
+
+cd ./pki
+/usr/sbin/openvpn --genkey --secret ta.key
+
